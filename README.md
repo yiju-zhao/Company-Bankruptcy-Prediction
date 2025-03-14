@@ -29,7 +29,16 @@ Corporate bankruptcy can significantly impact stakeholders, employees, and broad
 
 ## Literature Review
 
-*This section summarizes relevant academic papers, industry reports, and previous work in bankruptcy prediction, survival analysis, and financial risk modeling. Future updates will include detailed summaries of key references and findings that underpin the methodologies used in this project.*
+*The study of corporate bankruptcy prediction has a rich history, with early research laying the foundation for modern predictive techniques. Altman's seminal work in 1968 introduced the Z-score model, which used a discriminant analysis of financial ratios to quantify bankruptcy risk. This approach demonstrated that a combination of financial indicators could effectively differentiate between healthy and distressed firms.
+
+Building on Altman's work, Ohlson (1980) introduced a logistic regression framework that incorporated additional financial and operational variables. This probabilistic model provided a more nuanced prediction of bankruptcy risk by addressing the limitations of binary classification, and it became a standard reference in subsequent research.
+
+In recent years, survival analysis methods have gained prominence in bankruptcy prediction. The Cox Proportional Hazards model, for example, has been applied to capture the time-to-event nature of bankruptcy. Unlike traditional models, survival analysis can accommodate censored data—accounting for firms that have not yet experienced bankruptcy—thereby providing a dynamic view of risk over time.
+
+Moreover, the integration of machine learning techniques into financial modeling has further advanced the field. Modern algorithms such as ensemble methods, support vector machines, and neural networks are increasingly used to uncover complex, nonlinear relationships in financial data. Coupled with interpretability tools like SHAP (SHapley Additive exPlanations), these methods not only improve predictive accuracy but also enhance the transparency of the model's decision-making process.
+
+This project builds on these key insights by combining traditional statistical models (Logistic Regression and the Cox Proportional Hazards model) with modern machine learning approaches. The literature review informed the selection of features, the design of the modeling framework, and the evaluation metrics used in this study, ensuring that our work is firmly grounded in both established theories and contemporary research trends.*
+
 
 ---
 
