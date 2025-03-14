@@ -14,8 +14,9 @@ This project aims to predict the probability of corporate bankruptcy by analyzin
 9. [Code Sample](#code-sample)  
 10. [Usage](#usage)  
 11. [Results](#results)  
-12. [Discussion](#discussion)  
-13. [References](#references)
+12. [Discussion](#discussion) 
+13. [Conclusion](#conclusion) 
+14. [References](#references)
 
 ---
 
@@ -139,6 +140,27 @@ Two bankruptcy datasets were considered:
 - **Key Findings: Significant predictors include debt-to-equity ratio, current ratio, and operating cash flow.
 
 ## Discussion
+
+The results from our machine learning pipeline demonstrate a promising ability to predict corporate bankruptcy by combining traditional statistical methods with modern machine learning approaches. Below are the key insights from our analysis:
+
+- **Model Performance:**  
+  The baseline Logistic Regression model showed robust performance, as reflected in the confusion matrix, classification report, and ROC AUC score. Hyper-parameter tuning using GridSearchCV helped refine the model by optimizing the regularization parameter (`C`), which improved cross-validated ROC AUC scores. This indicates that the model effectively distinguishes between high-risk and low-risk firms.
+
+- **Feature Importance:**  
+  Analysis of the logistic regression coefficients revealed that certain financial indicators play a critical role in predicting bankruptcy risk. Features with the highest absolute coefficient values emerged as key predictors, aligning well with established financial theories and previous academic findings. These insights are instrumental in understanding which aspects of a firm’s financial profile are most influential in its likelihood of failure.
+
+- **Survival Analysis Insights:**  
+  By incorporating the Cox Proportional Hazards model, the analysis addressed the time-to-event nature of bankruptcy. This model is particularly valuable for handling right-censored data—allowing for a dynamic evaluation of risk over time. The survival analysis confirmed that, beyond a binary prediction, understanding the timing of potential bankruptcy events provides deeper insights into risk management and decision-making.
+
+- **Business Implications:**  
+  The combined findings of both models suggest that specific financial ratios and operational metrics are strongly associated with bankruptcy risk. These insights can be leveraged by investors, creditors, and corporate management to develop early warning systems and implement risk mitigation strategies. The predictive ability of the models supports more informed credit allocation, investment decisions, and overall risk management practices.
+
+- **Limitations and Future Work:**  
+  Despite the encouraging results, the model’s performance is inherently tied to the quality and scope of the available data. There is room for improvement by incorporating additional variables, such as macroeconomic indicators or more granular financial data. Future research could also explore advanced modeling techniques like ensemble methods or deep learning, as well as further enhance model interpretability using tools such as SHAP, to bolster predictive accuracy and robustness.
+
+Overall, the outcomes of this project validate the selected approach and provide a solid foundation for further refinement. The insights derived not only improve our understanding of the determinants of bankruptcy but also have significant practical implications for enhancing financial risk management.
+
+## Conclusion
 
 - **Insights: The analysis revealed that financial stability indicators play a critical role in bankruptcy prediction. The model provides actionable insights to improve risk management.
 - **Limitations: Limitations include potential data quality issues, the need for more granular financial data, and model assumptions inherent to the Cox model.
