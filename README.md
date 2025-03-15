@@ -7,6 +7,8 @@ This project aims to predict the probability of corporate bankruptcy by analyzin
    - [Literature Review](#literature-review)
    - [Business Questions](#business-questions)
 2. [Data Description](#data-description)  
+   - [Datasets](#datasets)
+   - [Justification for Dataset Selection](justification-for-dataset-selection)
 3. [Exploratory Data Analysis](#exploratory-data-analysis)
    - [Summary Statistics](#summary-statistics)
    - [Data Cleaning](#data-cleaning)
@@ -84,17 +86,20 @@ Two bankruptcy datasets were considered:
 - **Standardization**: U.S. companies adhere to standardized reporting (SEC, GAAP), ensuring consistency in financial ratios and improved model reliability.
 - **Implication for ML**: A larger, high-quality dataset enhances model performance and the transferability of insights across different financial contexts.
 
----
 
 ## Exploratory Data Analysis
 
-- **Summary Statistics and Visualization**: Examine distributions, detect outliers, and understand relationships among variables using histograms, boxplots, and scatter plots.
-- **Data Cleaning**: Address inconsistencies, remove duplicates, and rectify data entry errors.
-- **Handling Missing Data**: Apply appropriate imputation methods or remove missing entries where necessary.
-- **Outlier Detection**: Identify and assess the impact of outliers on model performance.
-- **Feature Correlation**: Analyze correlation matrices to identify multicollinearity and inform feature selection.
+### ummary Statistics and Visualization
+Examine distributions, detect outliers, and understand relationships among variables using histograms, boxplots, and scatter plots.
+### Data Cleaning
+Address inconsistencies, remove duplicates, and rectify data entry errors.
+### Handling Missing Data
+Apply appropriate imputation methods or remove missing entries where necessary.
+###Outlier Detection
+Identify and assess the impact of outliers on model performance.
+### Feature Correlation
+Analyze correlation matrices to identify multicollinearity and inform feature selection.
 
----
 
 ## Feature Engineering and Selection
 
@@ -102,7 +107,6 @@ Two bankruptcy datasets were considered:
 - **Feature Engineering**: Derive new variables, such as financial ratios (e.g., debt-to-assets, liquidity ratios), from existing data.
 - **Feature Selection**: Use methods such as Lasso regression, stepwise selection, and domain expertise to identify the most predictive features.
 
----
 
 ## Model Development
 
@@ -112,7 +116,6 @@ Two bankruptcy datasets were considered:
 - **Training**: Split the dataset into training and testing subsets, and train models using cross-validation to ensure generalizability.
 - **Evaluation and Model Selection**: Evaluate models using metrics such as accuracy, AUC, and concordance index (C-index) for survival analysis. Select the model that balances performance and interpretability.
 
----
 
 ## Final Model Explanation
 
