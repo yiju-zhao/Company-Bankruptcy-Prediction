@@ -3,7 +3,9 @@
 This project aims to predict the probability of corporate bankruptcy by analyzing financial indicators using machine learning and survival analysis techniques. By comparing different modeling approaches, we seek to derive actionable business insights regarding high-risk versus low-risk firms.
 
 ## Table of Contents
-1. [Project Overview](#project-overview) - Business Questions - Literature Review  
+1. [Project Overview](#project-overview) 
+   - [Literature Review](#literature-review)
+   - [Business Questions](#business-questions)
 2. [Data Description](#data-description)  
 3. [Exploratory Data Analysis](#exploratory-data-analysis) - Summary Statistics - Data Cleaning - Handling Missing Data - Outlier Detection - Visualization - Feature Correlation  
 4. [Feature Engineering and Selection](#feature-engineering-and-selection) - Feature Transformation - Feature Engineering - Feature Selection  
@@ -26,9 +28,7 @@ Corporate bankruptcy can significantly impact stakeholders, employees, and broad
 - **Goal**: Predict the hazard rate (risk) of bankruptcy over a specified time horizon using financial and operational features.  
 - **Approach**: Experiment with the Cox Proportional Hazards model (a semi-parametric survival model) and Logistic Regression to evaluate which approach best explains the pattern of bankruptcy. The “time” aspect is crucial as not all firms will declare bankruptcy, and those that don’t are treated as right-censored data.
 
----
-
-## Literature Review
+### Literature Review
 
 *The study of corporate bankruptcy prediction has a rich history, with early research laying the foundation for modern predictive techniques. Altman's seminal work in 1968 introduced the Z-score model, which used a discriminant analysis of financial ratios to quantify bankruptcy risk. This approach demonstrated that a combination of financial indicators could effectively differentiate between healthy and distressed firms.
 
@@ -40,16 +40,11 @@ Moreover, the integration of machine learning techniques into financial modeling
 
 This project builds on these key insights by combining traditional statistical models (Logistic Regression and the Cox Proportional Hazards model) with modern machine learning approaches. The literature review informed the selection of features, the design of the modeling framework, and the evaluation metrics used in this study, ensuring that our work is firmly grounded in both established theories and contemporary research trends.*
 
-
----
-
-## Business Questions
+### Business Questions
 
 - **Which financial indicators are most predictive of the probability of bankruptcy?**
 - **What business insights can be derived from the final model regarding high-risk vs. low-risk firms?**
 - **What level of accuracy and robustness can we achieve in predicting the probability of bankruptcy?**
-
----
 
 ## Data Description
 
