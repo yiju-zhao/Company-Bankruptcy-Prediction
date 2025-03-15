@@ -4,10 +4,16 @@ This project aims to predict the probability of corporate bankruptcy by analyzin
 
 ## Table of Contents
 1. [Project Overview](#project-overview) 
-   - [Literature Review](#literature-review)
-   - [Business Questions](#business-questions)
+- [Literature Review](#literature-review)
+- [Business Questions](#business-questions)
 2. [Data Description](#data-description)  
-3. [Exploratory Data Analysis](#exploratory-data-analysis) - Summary Statistics - Data Cleaning - Handling Missing Data - Outlier Detection - Visualization - Feature Correlation  
+3. [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Summary Statistics](#summary-statistics)
+- [Data Cleaning](#data-cleaning)
+- [Handling Missing Data](#handling-missing)
+- [Outlier Detection](#outlier-detection)
+- [Visualization](#visualization)
+- [Feature Correlation](#feature-correlation)
 4. [Feature Engineering and Selection](#feature-engineering-and-selection) - Feature Transformation - Feature Engineering - Feature Selection  
 5. [Model Development](#model-development) - Baseline Model - Model Selection Rationale - Hyper-Parameter Tuning - Training - Evaluation and Model Selection  
 6. [Final Model Explanation](#final-model-explanation) - Feature Importance - SHAP Analysis - Business Insights and Implications  
