@@ -80,19 +80,35 @@ Two bankruptcy datasets were considered:
 ## Exploratory Data Analysis
 
 - **Summary Statistics and Visualization**  
-   Examine distributions, detect outliers, and understand relationships among variables using histograms, boxplots, and scatter plots.
+   In this section we examine distributions, detect outliers, and understand relationships among variables using histograms, boxplots, and scatter plots. The original dataset has 78,682 rows and 21 columns.Columns include ‘company name‘,‘status label‘,‘year‘,‘X1‘through‘X18‘. Year Range: 1999 to 2018. 
+   Standard deviations are large for many features (X2, X9, X10, etc.) indicating wide variability. Some features have negative minimum values (e.g.,X5, X6, X14), and some are extremely large (e.g., X1 max = 169,662). 
+   Roughly 73,462 “alive” observations vs. 5,220 “failed” observations. “Failed” observations show lower average values for most features compared to “alive,” though the differences vary by feature.
+   Failure rate decreases over time (e.g., ~7-9% in early 2000s down to ~1-3% in the late 2010s). We provided the visualization of the distribution of all variebles. A count of status (“alive” vs. “failed”) by year was plotted. Failure rate by year was tabulated, showing a downward trend over the observed years.
 
 - **Data Cleaning**  
-   Address inconsistencies, remove duplicates, and rectify data entry errors.
+   In this section we address inconsistencies, remove duplicates, and rectify data entry errors.
+   We checked for duplicate (company_name, year) pairs. None were found. Some companies had multiple “failed” records; only the first “failed” record truly relevant for modeling “time-to-failure.” Observations post-failure can be removed if focusing on a strict survival perspective. No companies returned to “alive” status after failing.
+   Additionally, “Left-censored” companies (first observed in 1999) total 5,308. This may affect survival analysis or time-based modeling but does not inherently affect the dataset’s rows/columns outside modeling context.
 
 - **Handling Missing Data**  
-   Apply appropriate imputation methods or remove missing entries where necessary.
+   In this section we looked at missing data to apply appropriate imputation methods or remove missing entries where necessary. There were no missing values in any of the columns (all counts were 0). Because there are no missing values, no imputation or row removal was necessary.
 
 - **Outlier Detection**  
-   Identify and assess the impact of outliers on model performance.
+   Next we identify and assess the impact of outliers on model performance. Several variables exhibit large ranges (e.g., X1 max 169,662 X6 min -98,696 vs. max 62,567). vs. min -7.76; X6 min -98,696 vs. max 62,567). 
+   Negative values in certain features could be legitimate or might need domain-specific checks (e.g., net income, certain balances can go negative). Extremely high values (e.g., X9 max over 1,073,390) could significantly influence modeling (e.g., in regression-based approaches).
 
 - **Feature Correlation**  
-   Analyze correlation matrices to identify multicollinearity and inform feature selection.
+   In this section we analyze correlation matrices to identify multicollinearity and inform feature selection. In terms of correlation with "Failure" all numeric features have relatively low correlation (absolute values < 0.10) with the binary indicator of failure:
+   - year has a correlation of -0.083 with failure.
+   - Other variables range between -0.037 and -0.009 in correlation magnitude with failure.
+   - This suggests no single feature strongly predicts failure on its own.
+   However in terms of mulMulticollinearity While a full correlation matrix was not shown in detail, the low correlations with “failure” do not rule out potential multicollinearity among features themselves. A deeper check (VIF or correlation heatmap among X1–X18) is recommended.
+
+-  **Summary** 
+   Data Integrity: The dataset is relatively clean with no missing values or duplicate rows. 
+   Distribution & Scale: Many features have large or negative values, suggesting potential outliers and the need for careful feature scaling or transformation. 
+   Failure Trend: Failure rates decrease over the observation years, which could reflect economic conditions or sample selection over time.
+   Correlation: No single feature strongly correlates with the failure outcome, implying that a combination of features (possibly in a more sophisticated model) might be necessary to predict bankruptcy accurately.
 
 ## Feature Engineering and Selection
 
@@ -136,20 +152,28 @@ Translate model findings into actionable insights for stakeholders, including re
 ## Repository Structure
 
 ```
-├── data
-│   ├── raw
-│   └── processed
-├── notebooks
-│   └── ML_FinalProject.ipynb
-├── src
+Company-Bankruptcy-Prediction/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+│   ├── 1_EDA.ipynb
+│   ├── 2_FeatureEngineering.ipynb
+│   ├── 3_FeatureTransformation.ipynb
+│   ├── 4_ModelDevelopment.ipynb
+│   └── 5_Explanation.ipynb
+├── src/
 │   ├── data_preprocessing.py
 │   ├── feature_engineering.py
-│   └── modeling.py
-├── results
-│   ├── figures
-│   └── metrics
+│   ├── transformations.py
+│   ├── modeling.py
+│   └── explanation.py
+├── results/
+│   ├── figures/
+│   └── metrics/
 ├── requirements.txt
 └── README.md
+
 ```
 
 - **data**: Contains raw and processed datasets.
