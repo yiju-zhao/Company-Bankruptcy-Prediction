@@ -112,8 +112,13 @@ Two bankruptcy datasets were considered:
 
 ## Feature Engineering and Selection
 
+   In this section we created various financial ratios (e.g., liquidity, leverage, profitability, efficiency, Altman Z-score) and additional indicators (left_censored, period_after_2008). Addressed infinite or undefined values by capping or imputing (e.g., debt to equity = division by nearly zero). And explored transformations (log, Box-Cox, reciprocal, etc.) to reduce skewness and manage large outliers.
+   
 ### Feature Transformation
-Apply log-transformations to skewed features and scale variables to standardize ranges.
+This styep also included some Data Cleaning & Imputation.
+   Dealt with problematic records (negative or zero denominators).
+   - Filled missing or infinite transformed features with median/mean values as appropriate.
+   - Ended up with a set of transformed, lower-VIF features for modeling (e.g., quick_ratio_reciprocal, z_score_log, market_to_book_log).
 
 ### Feature Engineering
 Derive new variables, such as financial ratios (e.g., debt-to-assets, liquidity ratios), from existing data.
