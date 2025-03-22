@@ -145,14 +145,141 @@ Evaluate models using metrics such as accuracy, AUC, and concordance index (C-in
 
 ## Final Model Explanation
 
+Our final model development process involved addressing the significant class imbalance in the dataset and extracting meaningful insights from the trained models to inform business decisions.
+
+### Class Imbalance Handling
+
+The bankruptcy prediction dataset exhibited a substantial class imbalance, with a much smaller proportion of "failed" companies compared to "alive" ones. To address this challenge, we implemented and compared several advanced sampling techniques:
+
+- **Standard SMOTE**: Basic synthetic minority oversampling to balance classes
+- **Aggressive SMOTE (50%)**: Modified SMOTE with a 0.5 sampling strategy
+- **ADASYN**: Adaptive Synthetic Sampling that focuses on difficult-to-learn examples
+- **BorderlineSMOTE**: Variant that generates synthetic samples near the decision boundary
+- **SMOTE+Tomek**: Combined approach using SMOTE oversampling followed by Tomek links cleaning
+- **SMOTE+ENN**: Combined approach using SMOTE with Edited Nearest Neighbors cleaning
+- **Random Undersampling**: Reducing majority class samples to achieve better balance
+
+After evaluating model performance across these sampling techniques, we selected the approach that yielded the best balance between precision and recall while maintaining model generalizability.
+
+![Sampling Techniques Comparison](Results/figures/sampling_techniques_comparison.png)
+*Figure 1: Performance comparison of different sampling techniques for handling class imbalance*
+
+The confusion matrices for each sampling technique provide further insight into their effectiveness:
+
+![RF Standard SMOTE Confusion Matrix](Results/figures/RF_Standard_SMOTE_cm.png)
+*Figure 2: Confusion matrix for Random Forest with Standard SMOTE*
+
+![RF ADASYN Confusion Matrix](Results/figures/RF_ADASYN_cm.png)
+*Figure 3: Confusion matrix for Random Forest with ADASYN*
+
 ### Feature Importance
-Analyze the contribution of each feature to the final model's predictions using coefficients and importance scores.
+
+The final model revealed several key financial indicators that strongly influence bankruptcy prediction. Using Random Forest as one of our top-performing models, we identified the most influential features:
+
+![Random Forest Top Features](Results/figures/Random_Forest_top_features_barplot.png)
+*Figure 4: Top features ranked by importance in the Random Forest model*
+
+The relative importance of these features aligns with established financial theory, which suggests that companies with poor liquidity, high leverage, and declining profitability are more susceptible to bankruptcy.
 
 ### SHAP Analysis
-Use SHAP (SHapley Additive exPlanations) to visualize and explain individual predictions, highlighting key factors influencing bankruptcy risk.
+
+We employed SHAP (SHapley Additive exPlanations) to provide transparent, interpretable insights into our model's predictions. The SHAP analysis revealed:
+
+- **Feature Impact Direction**: Clearly identified which features increase or decrease bankruptcy probability
+- **Interaction Effects**: Uncovered how combinations of certain financial indicators can amplify bankruptcy risk
+- **Individual Prediction Explanations**: Provided case-by-case breakdowns of why specific companies were flagged as high-risk
+- **Global Patterns**: Identified consistent patterns across the dataset that characterize companies approaching bankruptcy
+
+![SHAP Summary Plot](Results/figures/Random_Forest_shap_summary.png)
+*Figure 5: SHAP summary plot showing the impact of each feature on model output*
+
+![SHAP Importance](Results/figures/Random_Forest_shap_importance.png)
+*Figure 6: SHAP-based feature importance for the Random Forest model*
+
+We also examined how specific features affect predictions through dependence plots:
+
+![X6 Dependence Plot](Results/figures/Random_Forest_X6_dependence.png)
+*Figure 7: SHAP dependence plot for feature X6 showing how this feature affects prediction across its value range*
+
+![X8 Dependence Plot](Results/figures/Random_Forest_X8_dependence.png)
+*Figure 8: SHAP dependence plot for feature X8 showing how this feature affects prediction across its value range*
+
+![X11 Dependence Plot](Results/figures/Random_Forest_X11_dependence.png)
+*Figure 9: SHAP dependence plot for feature X11 showing how this feature affects prediction across its value range*
+
+For individual prediction explanations, we used force plots:
+
+![Force Plot](Results/figures/Random_Forest_force_plot.png)
+*Figure 10: SHAP force plot explaining an individual prediction*
+
+![Waterfall Plot](Results/figures/Random_Forest_waterfall_plot.png)
+*Figure 11: SHAP waterfall plot showing feature contributions for a specific prediction*
+
+### Model Performance
+
+We evaluated multiple models including Random Forest, XGBoost, and Neural Networks to identify the best approach for bankruptcy prediction.
+
+![All Models ROC Comparison](Results/figures/all_models_ROC_comparison.png)
+*Figure 12: ROC curve comparison across all models*
+
+![All Models PR Comparison](Results/figures/all_models_PR_comparison.png)
+*Figure 13: Precision-Recall curve comparison across all models*
+
+Individual model performance metrics:
+
+**Random Forest:**
+![Random Forest ROC Curve](Results/figures/Random_Forest_ROC_curve.png)
+*Figure 14: ROC curve for the Random Forest model*
+
+![Random Forest PR Curve](Results/figures/Random_Forest_PR_curve.png)
+*Figure 15: Precision-Recall curve for the Random Forest model*
+
+![Random Forest Threshold Analysis](Results/figures/Random_Forest_threshold_analysis.png)
+*Figure 16: Threshold analysis for optimizing Random Forest performance*
+
+**XGBoost:**
+![XGBoost ROC Curve](Results/figures/XGBoost_ROC_curve.png)
+*Figure 17: ROC curve for the XGBoost model*
+
+![XGBoost PR Curve](Results/figures/XGBoost_PR_curve.png)
+*Figure 18: Precision-Recall curve for the XGBoost model*
+
+![XGBoost Threshold Analysis](Results/figures/XGBoost_threshold_analysis.png)
+*Figure 19: Threshold analysis for optimizing XGBoost performance*
+
+![XGBoost Confusion Matrix](Results/figures/XGBoost_optimal_confusion_matrix.png)
+*Figure 20: Confusion matrix for XGBoost with optimal threshold*
+
+**Neural Network:**
+![Neural Network ROC Curve](Results/figures/Neural_Network_ROC_curve.png)
+*Figure 21: ROC curve for the Neural Network model*
+
+![Neural Network PR Curve](Results/figures/Neural_Network_PR_curve.png)
+*Figure 22: Precision-Recall curve for the Neural Network model*
+
+![Neural Network Threshold Analysis](Results/figures/Neural_Network_threshold_analysis.png)
+*Figure 23: Threshold analysis for optimizing Neural Network performance*
 
 ### Business Insights and Implications
-Translate model findings into actionable insights for stakeholders, including recommendations for risk mitigation and investment strategies.
+
+Our model analysis yielded several actionable business insights:
+
+1. **Early Warning Indicators**: The SHAP analysis identified key financial indicators that serve as early warning signals for bankruptcy risk 12-24 months before potential failure.
+
+2. **Risk Segmentation**: The models effectively segment companies into risk tiers, allowing for more nuanced credit allocation and investment strategies.
+
+3. **Feature Interactions**: The SHAP dependence plots revealed how certain financial indicators interact with each other to amplify bankruptcy risk.
+
+4. **Threshold Optimization**: Our threshold analysis provides decision-makers with the flexibility to adjust the model's sensitivity based on their risk tolerance and business objectives.
+
+5. **Model Selection**: The comparative analysis of different models enables stakeholders to choose the approach that best aligns with their specific needs—whether prioritizing overall accuracy, recall of high-risk cases, or model interpretability.
+
+These insights can be leveraged by:
+- **Investors**: To screen potential investments and rebalance portfolios away from high-risk securities
+- **Creditors**: To adjust lending terms based on quantified bankruptcy risk
+- **Regulators**: To identify systemic risks in specific sectors or the broader economy
+- **Corporate Management**: To implement targeted financial restructuring before reaching critical distress levels
+
 
 ## Repository Structure
 
