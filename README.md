@@ -360,6 +360,29 @@ Overall, the outcomes of this project validate the selected approach and provide
 - **Limitations**: Limitations include potential data quality issues, the need for more granular financial data, and model assumptions inherent to the Cox model.
 - **Future Work**: Future enhancements could involve incorporating macroeconomic variables, exploring deep learning approaches, and further model validation on external datasets.
 
+## Team Videos
+
+- [Dean Hennessy] (https://.....)
+- [William Hookins] (https://.....)
+- [Samaneh Hosseini] (https://.....)
+- [Sima Namin] (https://drive.google.com/file/d/1e_XVFDY_gXFmN-cp_B9kbx5H8MQGxisg/view?usp=sharing)
+- [Eason Zhao] (https://....)
+
 ## References
 
-[Add your references here]
+- **Altman, E. I. (1968).** *Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy.*
+
+- **Ohlson, J. A. (1980).** *Financial Ratios and the Probabilistic Prediction of Bankruptcy.*
+
+- **Cox, D. R. (1972).** *Regression Models and Life-Tables.*
+
+- **Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002).** *SMOTE: Synthetic Minority Over-sampling Technique.*
+
+- **Lundberg, S. M., & Lee, S.-I. (2017).** *A Unified Approach to Interpreting Model Predictions.*
+
+- **He, H., Bai, Y., Garcia, E. A., & Li, S. (2008).** *ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning.*
+
+- **Datasets:**
+  - *Taiwan Bankruptcy Dataset:* [Kaggle](https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction)
+  - *U.S. Bankruptcy Dataset:* [Kaggle](https://www.kaggle.com/datasets/utkarshx27/american-companies-bankruptcy-prediction-dataset)
+
