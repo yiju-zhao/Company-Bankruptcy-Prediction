@@ -370,7 +370,7 @@ Overall, the outcomes of this project validate the selected approach and provide
 ## Team Videos
 
 - [Dean Hennessy] (https://.....)
-- [William Hookins] (https://.....)
+- [William Hookins] (https://drive.google.com/file/d/1HWery3InseM-RoinCp7lR-qlu4Fdw5JM/view?usp=sharing)
 - [Samaneh Hosseini] (https://.....)
 - [Sima Namin] (https://drive.google.com/file/d/1e_XVFDY_gXFmN-cp_B9kbx5H8MQGxisg/view?usp=sharing)
 - [Yiju (Eason) Zhao] (https://drive.google.com/file/d/1HNkItbgejqcY2BUsUxEAnQkCJQy7j7Wi/view?usp=share_link)
