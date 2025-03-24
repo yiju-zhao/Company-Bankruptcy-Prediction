@@ -29,6 +29,7 @@ This project aims to predict the probability of corporate bankruptcy by analyzin
 - [Results](#results)  
 - [Discussion](#discussion) 
 - [Conclusion](#conclusion) 
+- [Team Videos](#team-videos)
 - [References](#references)
 
 ## Project Overview
