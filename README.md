@@ -366,7 +366,7 @@ Overall, the outcomes of this project validate the selected approach and provide
 - [William Hookins] (https://.....)
 - [Samaneh Hosseini] (https://.....)
 - [Sima Namin] (https://drive.google.com/file/d/1e_XVFDY_gXFmN-cp_B9kbx5H8MQGxisg/view?usp=sharing)
-- [Eason Zhao] (https://drive.google.com/file/d/1HNkItbgejqcY2BUsUxEAnQkCJQy7j7Wi/view?usp=share_link)
+- [Yiju (Eason) Zhao] (https://drive.google.com/file/d/1HNkItbgejqcY2BUsUxEAnQkCJQy7j7Wi/view?usp=share_link)
 
 ## References
 
