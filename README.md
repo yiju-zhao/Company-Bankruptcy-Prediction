@@ -286,26 +286,32 @@ These insights can be leveraged by:
 
 ```
 Company-Bankruptcy-Prediction/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-│   ├── 1_EDA.ipynb
-│   ├── 2_FeatureEngineering.ipynb
-│   ├── 3_FeatureTransformation.ipynb
-│   ├── 4_ModelDevelopment.ipynb
-│   └── 5_Explanation.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── feature_engineering.py
-│   ├── transformations.py
-│   ├── modeling.py
-│   └── explanation.py
-├── results/
-│   ├── figures/
-│   └── metrics/
+├── Data
+│   ├── processed
+│   │   ├── README.md
+│   │   ├── american_bankruptcy_processed.csv
+│   │   └── american_bankruptcy_transformed.csv
+│   └── raw
+│       └── american_bankruptcy.csv
+├── Model
+├── Notebooks
+│   ├── EDA.ipynb
+│   ├── ModelDevelopment.ipynb
+│   ├── USBankruptcies.ipynb
+│   ├── USBankruptciesComplete.ipynb
+│   ├── feature-engineering-transformation.ipynb
+│   └── model-developement-explanation.ipynb
+├── README.md
+├── Reference_Materials
+│   └── README.md
+├── Results
+│   ├── figures
+│   └── metrics
+│       └── README.md
 ├── requirements.txt
-└── README.md
+└── src
+    ├── explanation.py
+    └── model_development.py
 
 ```
 
